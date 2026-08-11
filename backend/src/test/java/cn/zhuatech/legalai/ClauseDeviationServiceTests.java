@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 */
+package cn.zhuatech.legalai;import cn.zhuatech.legalai.service.ClauseDeviationService;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.*;
+class ClauseDeviationServiceTests{private final ClauseDeviationService s=new ClauseDeviationService();@Test void blocksUnsafeContract(){var r=s.evaluate(new ClauseDeviationService.Request(5,0,true,false,false,true));assertEquals("BLOCK",r.status());}@Test void acceptsStandardTerms(){var r=s.evaluate(new ClauseDeviationService.Request(0,12,false,true,true,false));assertEquals("ACCEPT",r.status());}}

@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 */
+package cn.zhuatech.legalai.controller;import cn.zhuatech.legalai.common.ApiResponse;import cn.zhuatech.legalai.service.ClauseDeviationService;import jakarta.validation.Valid;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/legalai/insights/clause-deviation") public class ClauseDeviationController{private final ClauseDeviationService service;public ClauseDeviationController(ClauseDeviationService service){this.service=service;}@PostMapping ApiResponse<ClauseDeviationService.Result> evaluate(@Valid @RequestBody ClauseDeviationService.Request r){return ApiResponse.ok(service.evaluate(r));}}

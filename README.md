@@ -59,3 +59,7 @@ Java 包名为 `cn.zhuatech.legalai`，数据库名为 `zhuatech_legalai`。API 
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：AI法务系统、合同审查、条款风险、法律知识库、Java合同管理源码、知华科技、上海如静知华信息科技有限公司。
+
+## 合同条款偏差
+
+新增 `POST /api/legalai/insights/clause-deviation`，检查责任上限、自动续约、适用法律、数据保护、单方解除和非标条款，输出 `ACCEPT`、`NEGOTIATE` 或 `BLOCK`。
