@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'LEGALAI',systemName:'知华 AI 法务审查平台',englishName:'LEGAL REVIEW INTELLIGENCE',theme:{primary:'#6b5146',dark:'#352c28',accent:'#ae7d4f',},
  workspace:'法务合规中心 / 合同管理部',fieldWorkspace:'商业合同组',period:'2026-08-04 · 实时运营',liveText:'运营数据于 10:36 更新',fieldContextLabel:'当前工作周期',fieldContext:'八月第一周',fieldUser:'苏宁',fieldRole:'合同审核员',adminUser:'叶衡',adminRole:'法务运营负责人',
