@@ -63,3 +63,7 @@ SEO：AI法务系统、合同审查、条款风险、法律知识库、Java合�
 ## 合同条款偏差
 
 新增 `POST /api/legalai/insights/clause-deviation`，检查责任上限、自动续约、适用法律、数据保护、单方解除和非标条款，输出 `ACCEPT`、`NEGOTIATE` 或 `BLOCK`。
+
+## 企业级 AI 法务审查治理
+
+新增 `POST /api/enterprise/legalai/legal-review-governance`，覆盖来源引用、条款追溯、模型版本、幻觉风险、法域、保密、法律特权和最终审批，返回 `ACCEPT / COUNSEL_REVIEW / BLOCKED`。详见 [AI 法务治理说明](docs/ENTERPRISE_LEGAL_AI_GOVERNANCE.md)。
