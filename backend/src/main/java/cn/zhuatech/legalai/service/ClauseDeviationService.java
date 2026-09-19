@@ -1,4 +1,16 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.legalai.service;import jakarta.validation.constraints.*;import org.springframework.stereotype.Service;import java.util.*;
-@Service public class ClauseDeviationService{public Result evaluate(Request r){int risk=Math.min(40,r.nonStandardClauses()*8);List<String> issues=new ArrayList<>();if(r.liabilityCapMonths()<6){risk+=35;issues.add("责任上限低于标准底线");}if(r.autoRenewalWithoutNotice()){risk+=20;issues.add("自动续约缺少提醒机制");}if(!r.governingLawApproved()){risk+=30;issues.add("适用法律未经法务批准");}if(!r.dataProtectionComplete()){risk+=40;issues.add("数据保护条款不完整");}if(r.unilateralTermination()){risk+=20;issues.add("存在单方解除权");}risk=Math.min(100,risk);String status=risk>=70?"BLOCK":risk>=30?"NEGOTIATE":"ACCEPT";if(issues.isEmpty())issues.add("条款与标准合同政策一致");return new Result(risk,status,issues);}
- public record Request(@Min(0) int nonStandardClauses,@Min(0) int liabilityCapMonths,@NotNull Boolean autoRenewalWithoutNotice,@NotNull Boolean governingLawApproved,@NotNull Boolean dataProtectionComplete,@NotNull Boolean unilateralTermination){}public record Result(int deviationRisk,String status,List<String> issues){} }
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Service public class ClauseDeviationService{/**
+                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                              */
+public Result evaluate(Request r){int risk=Math.min(40,r.nonStandardClauses()*8);List<String> issues=new ArrayList<>();if(r.liabilityCapMonths()<6){risk+=35;issues.add("责任上限低于标准底线");}if(r.autoRenewalWithoutNotice()){risk+=20;issues.add("自动续约缺少提醒机制");}if(!r.governingLawApproved()){risk+=30;issues.add("适用法律未经法务批准");}if(!r.dataProtectionComplete()){risk+=40;issues.add("数据保护条款不完整");}if(r.unilateralTermination()){risk+=20;issues.add("存在单方解除权");}risk=Math.min(100,risk);String status=risk>=70?"BLOCK":risk>=30?"NEGOTIATE":"ACCEPT";if(issues.isEmpty())issues.add("条款与标准合同政策一致");return new Result(risk,status,issues);}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
+ public record Request(@Min(0) int nonStandardClauses,@Min(0) int liabilityCapMonths,@NotNull Boolean autoRenewalWithoutNotice,@NotNull Boolean governingLawApproved,@NotNull Boolean dataProtectionComplete,@NotNull Boolean unilateralTermination){}/**
+                                                                                                                                                                                                                                                       * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                       */
+public record Result(int deviationRisk,String status,List<String> issues){} }

@@ -6,11 +6,20 @@ import cn.zhuatech.legalai.service.LegalAiReviewGovernanceService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/legalai")
 public class LegalAiReviewGovernanceController {
     private final LegalAiReviewGovernanceService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public LegalAiReviewGovernanceController(LegalAiReviewGovernanceService service) { this.service = service; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/legal-review-governance")
     public ApiResponse<LegalAiReviewGovernanceService.Assessment> assess(
             @Valid @RequestBody LegalAiReviewGovernanceService.Request request) {

@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.legalai.config;
 import cn.zhuatech.legalai.model.*; import cn.zhuatech.legalai.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository orders,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  var u1=units.save(new OperatingUnit("LEGAL-COM","商业合同组","法务中心",180));var u2=units.save(new OperatingUnit("LEGAL-DATA","数据合规组","法务中心",120));var u3=units.save(new OperatingUnit("LEGAL-IP","知识产权组","法务中心",96));
  var t1=orders.save(new WorkRecord("LEG-260804-018","CLOUD-MSA-2026","云服务框架采购合同",u1,24,16,1,LocalDate.now().plusDays(1),WorkRecord.Status.RUNNING,"采购合同"));
